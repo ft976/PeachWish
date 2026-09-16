@@ -1,0 +1,25 @@
+<div class="message" id="dynamic-message-container">
+    <div class="col-md-12">
+        <p>Loading...</p>
+    </div>
+</div>
+<script>
+    let encodedName = btoa(encodeURIComponent("John"));
+    let encodedMessage = btoa(encodeURIComponent("Happy birthday bro\nHave a good one"));
+    
+    let customName = "Friend";
+    let customMessage = ["Happy Birthday!"];
+    
+    if (encodedName) customName = decodeURIComponent(atob(encodedName));
+    if (encodedMessage) customMessage = decodeURIComponent(atob(encodedMessage)).split('\n');
+
+    let html = '<p>' + customName + ',</p>';
+    customMessage.forEach(function(line) {
+        if(line.trim() !== '') {
+            html += '<p>' + line + '</p>';
+        }
+    });
+    html += '<p>Happy Birthday ' + customName + '! 🎂🌹</p>';
+
+    document.querySelector('#dynamic-message-container .col-md-12').innerHTML = html;
+</script>

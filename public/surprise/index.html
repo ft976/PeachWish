@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="ie lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="ie lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="ie lt-ie9"> <![endif]-->
+<!--[if gt IE 8]> <html> <![endif]-->
+<!--[if !IE]><!--><html lang="en"><!-- <![endif]-->
+<head>
+	<title>A Special Surprise For You 💖</title>
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect x=%220%22 y=%220%22 width=%22100%22 height=%22100%22 rx=%2232%22 fill=%22%23FFEBE5%22/><path d=%22M50,73 C48,73 24,53 24,36 C24,26 32,18 42,18 C47,18 50,21 50,21 C50,21 53,18 58,18 C68,18 76,26 76,36 C76,53 52,73 50,73 Z%22 fill=%22%23FF7A59%22/></svg>">
+	<meta charset="UTF-8" />
+	<meta name="description" content="Happy Birthday">
+	<meta name="robots" content="index, follow" />
+	<link rel="author" href="https://plus.google.com/u/1/+SaptheshV/" /> 
+    <meta name="keywords" content="Birthday, Happy">
+    <!-- Strat of Facebook Meta -->
+    <meta property="og:type" content="E-Greeting" />
+    <meta property="og:image" content="favicon.ico" />
+    <meta property="og:description" content="Wish you a very Happy Birthday">
+    <!-- End of Facebook Meta Tags -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<link rel="stylesheet" type="text/css" href="loading.css">
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'> -->
+	<link rel="stylesheet/less" href="cake.less">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.1.0/less.min.js"></script>
+	<style>
+		/* Custom style for Memories Polaroid album cards matching PeachWish color scheme */
+		.polaroid-card {
+			cursor: pointer;
+			position: relative;
+			overflow: hidden;
+		}
+		.polaroid-card:hover {
+			transform: scale(1.04) rotate(0deg) !important;
+			box-shadow: 0 15px 35px rgba(255, 138, 113, 0.22) !important;
+			border-color: #FFBCA7 !important;
+		}
+		.polaroid-card::after {
+			content: "🔍 Tap to view";
+			position: absolute;
+			bottom: 6px;
+			right: 12px;
+			font-family: 'Signika', sans-serif;
+			font-size: 10px;
+			color: #FF8A71;
+			opacity: 0;
+			transition: opacity 0.2s ease;
+			font-weight: bold;
+		}
+		.polaroid-card:hover::after {
+			opacity: 1;
+		}
+		#open-memories-btn:hover {
+			background: #FF7A59 !important;
+			box-shadow: 0 12px 30px rgba(255, 122, 89, 0.45) !important;
+			transform: translateY(-2px);
+		}
+		#open-memories-btn:active {
+			transform: scale(0.98);
+		}
+		#close-memories-btn:hover {
+			background: #FFE4D9 !important;
+			color: #FF7A59 !important;
+			border-color: #FFBCA7 !important;
+		}
+		#close-lightbox-btn:hover {
+			color: #FF8A71 !important;
+			transform: scale(1.1);
+		}
+		.lightbox-open-animation {
+			animation: zoomInLight 0.3s forwards cubic-bezier(0.16, 1, 0.3, 1);
+		}
+		@keyframes zoomInLight {
+			from { opacity: 0; transform: scale(0.95); }
+			to { opacity: 1; transform: scale(1); }
+		}
+	</style>
+</head>
+
+<body>
+	<div id="expired-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background: #fffcf6; z-index: 10000; align-items:center; justify-content:center; text-align:center; padding: 24px; font-family: 'Playfair Display', serif; flex-direction: column;">
+	  <div style="max-width: 500px; padding: 40px; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(222, 160, 130, 0.15); border: 1px solid #faeedb;">
+	    <div style="font-size: 72px; margin-bottom: 20px;">🥀</div>
+	    <h2 style="font-size: 32px; color: #8c5d49; margin-bottom: 16px; font-weight: 700;">Surprise Expired</h2>
+	    <p style="font-size: 18px; color: #b08d7e; line-height: 1.6; margin-bottom: 24px;">This sweet surprise has expired, was deleted by its creator, or is no longer available.</p>
+	    <div style="display: inline-block; padding: 12px 28px; background: #dec09e; color: white; border-radius: 30px; font-family: 'Signika', sans-serif; font-weight: 700; text-transform: uppercase; font-size: 14px; letter-spacing: 1px;">PeachWish</div>
+	  </div>
+	</div>
+
+	<div class="loading"></div>
+	<audio class="song" controls loop>
+        <source src="hbd.mp3"></source>
+	   Your browser isn't invited for super fun audio time.
+    </audio>
+    <div class="balloons text-center" id="b1"></div>
+    <div class="balloons text-center" id="b2"></div>
+	<div class="balloons text-center" id="b3"></div>
+	<div class="balloons text-center" id="b4"></div>
+	<div class="balloons text-center" id="b5"></div>
+    <div class="balloons text-center" id="b6"></div>
+    <div class="balloons text-center" id="b7"></div>
+
+    <img src="Balloon-Border.png" width="100%" class="balloon-border">
+ 
+
+	<div class="container">
+		
+		<div class="row">
+			<div class="col-md-2 col-xs-2 bulb-holder">
+				<div class="bulb" id="bulb_yellow"></div>
+			</div>
+			<div class="col-md-2 col-xs-2 bulb-holder">
+				<div class="bulb" id="bulb_red"></div>
+			</div>
+			<div class="col-md-2 col-xs-2 bulb-holder">
+				<div class="bulb" id="bulb_blue"></div>
+			</div>
+			<div class="col-md-2 col-xs-2 bulb-holder">
+				<div class="bulb" id="bulb_green"></div>
+			</div>
+			<div class="col-md-2 col-xs-2 bulb-holder">
+				<div class="bulb" id="bulb_pink"></div>
+			</div>
+			<div class="col-md-2 col-xs-2 bulb-holder">
+				<div class="bulb" id="bulb_orange"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<img src="banner.png" class="bannar">
+			</div>
+		</div>
+		<div class="row cake-cover">
+			<div class="col-md-12 text-center">
+				<div class="cake">
+				  <div class="velas">
+				    <div class="fuego"></div>
+				    <div class="fuego"></div>
+				    <div class="fuego"></div>
+				    <div class="fuego"></div>
+				    <div class="fuego"></div>
+				  </div>
+				  <!-- Enhanced Chocolate Cake Illustration matching reference image -->
+				  <svg viewBox="0 0 340 320" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="display:block; overflow:visible;">
+				    <defs>
+				      <!-- Shadows -->
+				      <filter id="plate-shadow" x="-20%" y="-20%" width="140%" height="140%">
+				        <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#000000" flood-opacity="0.45"/>
+				      </filter>
+				      <filter id="cake-shadow" x="-20%" y="-20%" width="140%" height="140%">
+				        <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#2a1208" flood-opacity="0.5"/>
+				      </filter>
+				      <filter id="cherry-shadow" x="-30%" y="-30%" width="160%" height="160%">
+				        <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#200608" flood-opacity="0.6"/>
+				      </filter>
+
+				      <!-- Plate Gradients -->
+				      <linearGradient id="plate-grad" x1="0" y1="0" x2="0" y2="1">
+				        <stop offset="0%" stop-color="#fae7b9" />
+				        <stop offset="60%" stop-color="#ecd29b" />
+				        <stop offset="100%" stop-color="#d6b36a" />
+				      </linearGradient>
+				      <linearGradient id="plate-rim" x1="0" y1="0" x2="1" y2="0">
+				        <stop offset="0%" stop-color="#cca354" />
+				        <stop offset="50%" stop-color="#fff0ca" />
+				        <stop offset="100%" stop-color="#ba9144" />
+				      </linearGradient>
+
+				      <!-- Cylinder 3D Lighting -->
+				      <linearGradient id="cyl-shading" x1="0" y1="0" x2="1" y2="0">
+				        <stop offset="0%" stop-color="#000000" stop-opacity="0.45" />
+				        <stop offset="25%" stop-color="#000000" stop-opacity="0.08" />
+				        <stop offset="55%" stop-color="#ffffff" stop-opacity="0.16" />
+				        <stop offset="85%" stop-color="#000000" stop-opacity="0.12" />
+				        <stop offset="100%" stop-color="#000000" stop-opacity="0.5" />
+				      </linearGradient>
+
+				      <!-- Ganache Top Surface -->
+				      <radialGradient id="ganache-top" cx="48%" cy="40%" r="65%">
+				        <stop offset="0%" stop-color="#4e2a22" />
+				        <stop offset="60%" stop-color="#3c1e17" />
+				        <stop offset="100%" stop-color="#28110a" />
+				      </radialGradient>
+
+				      <!-- Ganache Drips -->
+				      <linearGradient id="drip-grad" x1="0" y1="0" x2="0" y2="1">
+				        <stop offset="0%" stop-color="#46241c" />
+				        <stop offset="70%" stop-color="#371a13" />
+				        <stop offset="100%" stop-color="#260f09" />
+				      </linearGradient>
+
+				      <!-- Cherry Gradient -->
+				      <radialGradient id="cherry-grad" cx="35%" cy="30%" r="70%">
+				        <stop offset="0%" stop-color="#ff666d" />
+				        <stop offset="35%" stop-color="#e3222b" />
+				        <stop offset="80%" stop-color="#930d14" />
+				        <stop offset="100%" stop-color="#4e0407" />
+				      </radialGradient>
+
+				      <!-- Candle Gradient & Pattern -->
+				      <linearGradient id="candle-body" x1="0" y1="0" x2="1" y2="0">
+				        <stop offset="0%" stop-color="#ded8cf" />
+				        <stop offset="30%" stop-color="#ffffff" />
+				        <stop offset="75%" stop-color="#f2ece2" />
+				        <stop offset="100%" stop-color="#bfb6a4" />
+				      </linearGradient>
+				      
+				      <pattern id="candle-stripes" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(40)">
+				        <rect width="8" height="16" fill="#e53935" />
+				        <rect x="8" width="8" height="16" fill="#ffffff" />
+				      </pattern>
+
+				      <!-- Cake Drum Clipping Path -->
+				      <clipPath id="drum-clip">
+				        <path d="M 52,130 C 52,168 288,168 288,130 L 288,216 C 288,255 52,255 52,216 Z" />
+				      </clipPath>
+				      
+				      <!-- Candle Cylinder Clip -->
+				      <clipPath id="candle-clip">
+				        <rect x="164" y="24" width="12" height="66" rx="2" />
+				      </clipPath>
+				    </defs>
+
+				    <!-- LAYER 1: BASE GOLDEN PLATTER -->
+				    <g id="cake-base-plate">
+				      <ellipse cx="170" cy="264" rx="150" ry="42" fill="url(#plate-grad)" stroke="url(#plate-rim)" stroke-width="3" filter="url(#plate-shadow)"/>
+				      <ellipse cx="170" cy="262" rx="138" ry="36" fill="none" stroke="#e0be75" stroke-width="1.5" opacity="0.7"/>
+				      <ellipse cx="170" cy="254" rx="120" ry="30" fill="rgba(35, 14, 8, 0.48)"/>
+				    </g>
+
+				    <!-- LAYER 2: STRIPED CAKE DRUM BODY -->
+				    <g id="cake-body-stripes" filter="url(#cake-shadow)">
+				      <g clip-path="url(#drum-clip)">
+				        <!-- Alternating Chocolate and Biscuit Vertical Stripes -->
+				        <rect x="52" y="100" width="17" height="160" fill="#6d4236" />
+				        <rect x="69" y="100" width="17" height="160" fill="#dec09e" />
+				        <rect x="86" y="100" width="17" height="160" fill="#6d4236" />
+				        <rect x="103" y="100" width="17" height="160" fill="#dec09e" />
+				        <rect x="120" y="100" width="17" height="160" fill="#6d4236" />
+				        <rect x="137" y="100" width="17" height="160" fill="#dec09e" />
+				        <rect x="154" y="100" width="17" height="160" fill="#6d4236" />
+				        <rect x="171" y="100" width="17" height="160" fill="#dec09e" />
+				        <rect x="188" y="100" width="17" height="160" fill="#6d4236" />
+				        <rect x="205" y="100" width="17" height="160" fill="#dec09e" />
+				        <rect x="222" y="100" width="17" height="160" fill="#6d4236" />
+				        <rect x="239" y="100" width="17" height="160" fill="#dec09e" />
+				        <rect x="256" y="100" width="17" height="160" fill="#6d4236" />
+				        <rect x="273" y="100" width="17" height="160" fill="#dec09e" />
+
+				        <!-- 3D Cylindrical Curvature Shadow Overlay -->
+				        <rect x="52" y="100" width="236" height="160" fill="url(#cyl-shading)" />
+				      </g>
+				    </g>
+
+				    <!-- LAYER 3: TOP CHOCOLATE GANACHE SURFACE -->
+				    <g id="cake-top-ganache">
+				      <ellipse cx="170" cy="130" rx="118" ry="35" fill="url(#ganache-top)"/>
+				      <ellipse cx="170" cy="130" rx="118" ry="35" fill="none" stroke="#260f09" stroke-width="1.5"/>
+				    </g>
+
+				    <!-- LAYER 4: CHOCOLATE GLOSS DRIPS OVERHANG -->
+				    <g id="cake-chocolate-drips">
+				      <path d="
+				        M 52,130
+				        C 53,148 58,162 64,162
+				        C 70,162 72,145 78,144
+				        C 84,143 86,196 92,196
+				        C 98,196 100,150 106,146
+				        C 112,142 116,166 122,166
+				        C 128,166 130,147 136,146
+				        C 142,145 146,180 152,180
+				        C 158,180 162,152 168,152
+				        C 174,152 178,172 184,172
+				        C 190,172 194,148 200,146
+				        C 206,144 210,198 216,198
+				        C 222,198 226,148 232,146
+				        C 238,144 242,168 248,168
+				        C 254,168 258,146 264,144
+				        C 270,142 274,164 280,164
+				        C 285,164 287,145 288,130
+				        C 288,168 52,168 52,130 Z
+				      " fill="url(#drip-grad)"/>
+
+				      <!-- Gloss Highlights on Chocolate Drips -->
+				      <path d="M 60,138 Q 64,158 64,160" stroke="#754436" stroke-width="2" stroke-linecap="round" fill="none"/>
+				      <circle cx="92" cy="192" r="3" fill="#6d3c2f" opacity="0.8"/>
+				      <path d="M 89,152 Q 91,185 91,190" stroke="#754436" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+				      <path d="M 119,148 Q 121,162 122,164" stroke="#754436" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+				      <circle cx="152" cy="176" r="2.8" fill="#6d3c2f" opacity="0.8"/>
+				      <path d="M 149,154 Q 151,172 152,174" stroke="#754436" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+				      <circle cx="216" cy="194" r="3" fill="#6d3c2f" opacity="0.8"/>
+				      <path d="M 213,154 Q 215,188 215,192" stroke="#754436" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+				      <path d="M 245,150 Q 247,164 248,166" stroke="#754436" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+				      <path d="M 276,146 Q 279,160 280,162" stroke="#754436" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+				      <path d="M 68,142 C 110,160 230,160 272,142" stroke="rgba(255,255,255,0.18)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+				    </g>
+
+				    <!-- LAYER 5: WHIPPED CREAM PIPING RING -->
+				    <g id="whipped-cream-piping">
+				      <path d="
+				        M 65,124 Q 68,120 74,123 Q 78,118 84,120 Q 89,115 96,117 Q 102,112 110,113 
+				        Q 118,109 128,110 Q 138,107 148,108 Q 158,106 170,106 Q 182,106 192,108 
+				        Q 202,107 212,110 Q 222,109 230,113 Q 238,112 244,117 Q 251,115 256,120 
+				        Q 262,118 266,123 Q 272,120 275,124 Q 272,128 266,128 Q 261,133 254,133 
+				        Q 247,137 239,138 Q 230,142 220,143 Q 210,146 198,147 Q 185,148 170,148 
+				        Q 155,148 142,147 Q 130,146 120,143 Q 110,142 101,138 Q 93,137 86,133 
+				        Q 79,133 74,128 Q 68,128 65,124 Z
+				      " fill="#fff9f2" stroke="#eddcd2" stroke-width="1.8" filter="url(#cake-shadow)"/>
+				      <path d="M 80,126 Q 84,122 88,125 M 105,122 Q 110,118 115,121 M 135,118 Q 140,114 146,117 M 165,116 Q 170,112 176,116 M 195,118 Q 200,114 206,117 M 225,122 Q 230,118 235,121 M 250,126 Q 254,122 258,125" stroke="#e0c7ba" stroke-width="1.2" fill="none"/>
+				    </g>
+
+				    <!-- LAYER 6: THE CANDLE IN CENTER -->
+				    <g id="birthday-candle">
+				      <ellipse cx="170" cy="89" rx="10" ry="3" fill="rgba(20,8,4,0.5)"/>
+				      <g clip-path="url(#candle-clip)">
+				        <rect x="164" y="24" width="12" height="66" fill="url(#candle-body)"/>
+				        <rect x="164" y="24" width="12" height="66" fill="url(#candle-stripes)" opacity="0.9"/>
+				        <rect x="164" y="24" width="12" height="66" fill="url(#cyl-shading)" opacity="0.6"/>
+				      </g>
+				      <ellipse cx="170" cy="24" rx="6" ry="2.2" fill="#fff5ea" stroke="#d5c8ba" stroke-width="0.7"/>
+				      <ellipse cx="170" cy="24" rx="3.5" ry="1.2" fill="#d85a5a" opacity="0.7"/>
+				      <path d="M 170,24 Q 169,18 171,13" stroke="#1f1814" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+				    </g>
+
+				    <!-- LAYER 7: DARK CHOCOLATE SHARDS & BARK IN CENTER -->
+				    <g id="chocolate-shards">
+				      <polygon points="120,125 142,68 158,124" fill="#240f09" stroke="#180905" stroke-width="0.8"/>
+				      <polygon points="186,118 226,38 238,114" fill="#381b13" stroke="#1f0d08" stroke-width="0.8" filter="url(#cake-shadow)"/>
+				      <polygon points="226,38 238,114 233,115" fill="#5c2e22"/>
+				      <polygon points="125,124 178,48 194,122" fill="#2f150d" stroke="#1c0a06" stroke-width="0.8" filter="url(#cake-shadow)"/>
+				      <polygon points="125,124 178,48 165,124" fill="#422017"/>
+				      <path d="M 125,124 L 178,48" stroke="#68392c" stroke-width="1.5" stroke-linecap="round"/>
+				      <polygon points="135,130 148,116 156,128" fill="#200b06"/>
+				      <polygon points="168,134 182,120 188,132" fill="#462319"/>
+				      <polygon points="196,128 208,115 214,126" fill="#2b120a"/>
+				      <polygon points="152,136 160,126 166,134" fill="#5a2d21"/>
+				    </g>
+
+				    <!-- LAYER 8: GLOSSY RED CHERRIES WITH STEMS -->
+				    <g id="cherries">
+				      <!-- Cherry 1 (Back Left) -->
+				      <g filter="url(#cherry-shadow)">
+				        <path d="M 98,92 C 96,65 106,50 108,44" stroke="#4a3b2c" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+				        <circle cx="108" cy="44" r="1.2" fill="#38291b"/>
+				        <circle cx="98" cy="94" r="12" fill="url(#cherry-grad)"/>
+				        <ellipse cx="94" cy="90" rx="3.2" ry="1.8" transform="rotate(-35, 94, 90)" fill="#ffffff" opacity="0.85"/>
+				      </g>
+
+				      <!-- Cherry 2 (Back Mid-Left) -->
+				      <g filter="url(#cherry-shadow)">
+				        <path d="M 134,80 C 130,55 138,40 142,32" stroke="#4a3b2c" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+				        <circle cx="142" cy="32" r="1.2" fill="#38291b"/>
+				        <circle cx="134" cy="82" r="12" fill="url(#cherry-grad)"/>
+				        <ellipse cx="130" cy="78" rx="3.2" ry="1.8" transform="rotate(-35, 130, 78)" fill="#ffffff" opacity="0.85"/>
+				      </g>
+
+				      <!-- Cherry 3 (Back Mid-Right) -->
+				      <g filter="url(#cherry-shadow)">
+				        <path d="M 206,80 C 210,55 204,40 200,34" stroke="#4a3b2c" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+				        <circle cx="200" cy="34" r="1.2" fill="#38291b"/>
+				        <circle cx="206" cy="82" r="12" fill="url(#cherry-grad)"/>
+				        <ellipse cx="202" cy="78" rx="3.2" ry="1.8" transform="rotate(-35, 202, 78)" fill="#ffffff" opacity="0.85"/>
+				      </g>
+
+				      <!-- Cherry 4 (Back Right) -->
+				      <g filter="url(#cherry-shadow)">
+				        <path d="M 242,94 C 248,68 238,50 236,44" stroke="#4a3b2c" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+				        <circle cx="236" cy="44" r="1.2" fill="#38291b"/>
+				        <circle cx="242" cy="96" r="12" fill="url(#cherry-grad)"/>
+				        <ellipse cx="238" cy="92" rx="3.2" ry="1.8" transform="rotate(-35, 238, 92)" fill="#ffffff" opacity="0.85"/>
+				      </g>
+
+				      <!-- Cherry 5 (Far Left Rim) -->
+				      <g filter="url(#cherry-shadow)">
+				        <path d="M 76,116 C 68,90 74,74 76,66" stroke="#4a3b2c" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+				        <circle cx="76" cy="66" r="1.2" fill="#38291b"/>
+				        <circle cx="76" cy="118" r="13" fill="url(#cherry-grad)"/>
+				        <ellipse cx="72" cy="114" rx="3.5" ry="2" transform="rotate(-35, 72, 114)" fill="#ffffff" opacity="0.9"/>
+				      </g>
+
+				      <!-- Cherry 6 (Far Right Rim) -->
+				      <g filter="url(#cherry-shadow)">
+				        <path d="M 264,118 C 272,92 266,74 262,66" stroke="#4a3b2c" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+				        <circle cx="262" cy="66" r="1.2" fill="#38291b"/>
+				        <circle cx="264" cy="120" r="13" fill="url(#cherry-grad)"/>
+				        <ellipse cx="260" cy="116" rx="3.5" ry="2" transform="rotate(-35, 260, 116)" fill="#ffffff" opacity="0.9"/>
+				      </g>
+
+				      <!-- Cherry 7 (Front Left) -->
+				      <g filter="url(#cherry-shadow)">
+				        <path d="M 110,136 C 104,110 112,94 114,84" stroke="#4a3b2c" stroke-width="1.7" stroke-linecap="round" fill="none"/>
+				        <circle cx="114" cy="84" r="1.3" fill="#38291b"/>
+				        <circle cx="110" cy="138" r="13.5" fill="url(#cherry-grad)"/>
+				        <ellipse cx="106" cy="133" rx="3.8" ry="2" transform="rotate(-35, 106, 133)" fill="#ffffff" opacity="0.9"/>
+				        <ellipse cx="114" cy="144" rx="3" ry="1.2" fill="#ff757b" opacity="0.35"/>
+				      </g>
+
+				      <!-- Cherry 8 (Front Center-Left) -->
+				      <g filter="url(#cherry-shadow)">
+				        <path d="M 148,146 C 146,120 152,102 154,94" stroke="#4a3b2c" stroke-width="1.7" stroke-linecap="round" fill="none"/>
+				        <circle cx="154" cy="94" r="1.3" fill="#38291b"/>
+				        <circle cx="148" cy="148" r="13.5" fill="url(#cherry-grad)"/>
+				        <ellipse cx="144" cy="143" rx="3.8" ry="2" transform="rotate(-35, 144, 143)" fill="#ffffff" opacity="0.9"/>
+				        <ellipse cx="152" cy="154" rx="3" ry="1.2" fill="#ff757b" opacity="0.35"/>
+				      </g>
+
+				      <!-- Cherry 9 (Front Center-Right) -->
+				      <g filter="url(#cherry-shadow)">
+				        <path d="M 190,144 C 194,118 188,102 186,94" stroke="#4a3b2c" stroke-width="1.7" stroke-linecap="round" fill="none"/>
+				        <circle cx="186" cy="94" r="1.3" fill="#38291b"/>
+				        <circle cx="190" cy="146" r="13.5" fill="url(#cherry-grad)"/>
+				        <ellipse cx="186" cy="141" rx="3.8" ry="2" transform="rotate(-35, 186, 141)" fill="#ffffff" opacity="0.9"/>
+				        <ellipse cx="194" cy="152" rx="3" ry="1.2" fill="#ff757b" opacity="0.35"/>
+				      </g>
+
+				      <!-- Cherry 10 (Front Right) -->
+				      <g filter="url(#cherry-shadow)">
+				        <path d="M 228,134 C 234,108 226,92 224,84" stroke="#4a3b2c" stroke-width="1.7" stroke-linecap="round" fill="none"/>
+				        <circle cx="224" cy="84" r="1.3" fill="#38291b"/>
+				        <circle cx="228" cy="136" r="13.5" fill="url(#cherry-grad)"/>
+				        <ellipse cx="224" cy="131" rx="3.8" ry="2" transform="rotate(-35, 224, 131)" fill="#ffffff" opacity="0.9"/>
+				        <ellipse cx="232" cy="142" rx="3" ry="1.2" fill="#ff757b" opacity="0.35"/>
+				      </g>
+				    </g>
+				  </svg>
+				</div>
+			</div>
+		</div>
+		<div class="row message" id="dynamic-message-container">
+			<div class="col-md-12">
+				<p>Loading...</p>
+			</div>
+		</div>
+
+		<!-- Memories CTA Section (Initially hidden) -->
+		<div class="row text-center" id="memories-cta-container" style="display: none; margin-top: 35px; margin-bottom: 25px;">
+			<button class="btn" id="open-memories-btn" style="background: #FF8A71; color: white; border: none; padding: 14px 35px; border-radius: 30px; font-family: 'Signika', sans-serif; font-weight: bold; font-size: 16px; letter-spacing: 0.5px; box-shadow: 0 8px 25px rgba(255, 138, 113, 0.35); cursor: pointer; transition: all 0.3s ease; transform: scale(1); outline: none;">
+				💖 Open Our Memories 📸
+			</button>
+		</div>
+
+		<!-- Memories Photo Album Scrapbook Overlay -->
+		<div id="memories-album-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #FFFDFD; z-index: 20000; overflow-y: auto; font-family: 'Playfair Display', serif; padding: 40px 20px;">
+			<!-- Exquisite Large Corner Rose Garlands decorating the Album overlay corners perfectly -->
+			<div style="position: absolute; top: 0; left: 0; width: 150px; height: 150px; pointer-events: none; z-index: 21000; opacity: 0.95; background-image: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><defs><radialGradient id=&quot;rg1&quot; cx=&quot;50%&quot; cy=&quot;50%&quot; r=&quot;50%&quot;><stop offset=&quot;0%&quot; stop-color=&quot;%23FFB3A7&quot;/><stop offset=&quot;75%&quot; stop-color=&quot;%23FF8A71&quot;/><stop offset=&quot;100%&quot; stop-color=&quot;%23FF6B4E&quot; stop-opacity=&quot;0&quot;/></radialGradient><radialGradient id=&quot;rg2&quot; cx=&quot;40%&quot; cy=&quot;40%&quot; r=&quot;60%&quot;><stop offset=&quot;0%&quot; stop-color=&quot;%23FFE4D9&quot;/><stop offset=&quot;50%&quot; stop-color=&quot;%23FFB3A7&quot;/><stop offset=&quot;100%&quot; stop-color=&quot;%23FF8A71&quot;/></radialGradient></defs><g transform=&quot;rotate(270, 50, 50)&quot;><path d=&quot;M100,0 Q65,15 50,50 Q35,85 0,100&quot; fill=&quot;none&quot; stroke=&quot;%238cb07c&quot; stroke-width=&quot;3&quot;/><path d=&quot;M82,15 C68,5 58,25 72,30 C86,35 90,15 82,15 Z&quot; fill=&quot;%237ba36a&quot; opacity=&quot;0.85&quot;/><path d=&quot;M45,45 C35,35 25,55 35,60 C45,65 52,45 45,45 Z&quot; fill=&quot;%238cb07c&quot; opacity=&quot;0.85&quot;/><circle cx=&quot;80&quot; cy=&quot;20&quot; r=&quot;16&quot; fill=&quot;url(%23rg2)&quot;/><circle cx=&quot;82&quot; cy=&quot;18&quot; r=&quot;11&quot; fill=&quot;url(%23rg1)&quot;/><circle cx=&quot;52&quot; cy=&quot;45&quot; r=&quot;12&quot; fill=&quot;url(%23rg2)&quot;/><circle cx=&quot;54&quot; cy=&quot;43&quot; r=&quot;8&quot; fill=&quot;url(%23rg1)&quot;/></g></svg>'); background-size: contain; background-repeat: no-repeat;"></div>
+			<div style="position: absolute; top: 0; right: 0; width: 150px; height: 150px; pointer-events: none; z-index: 21000; opacity: 0.95; background-image: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><defs><radialGradient id=&quot;rg1&quot; cx=&quot;50%&quot; cy=&quot;50%&quot; r=&quot;50%&quot;><stop offset=&quot;0%&quot; stop-color=&quot;%23FFB3A7&quot;/><stop offset=&quot;75%&quot; stop-color=&quot;%23FF8A71&quot;/><stop offset=&quot;100%&quot; stop-color=&quot;%23FF6B4E&quot; stop-opacity=&quot;0&quot;/></radialGradient><radialGradient id=&quot;rg2&quot; cx=&quot;40%&quot; cy=&quot;40%&quot; r=&quot;60%&quot;><stop offset=&quot;0%&quot; stop-color=&quot;%23FFE4D9&quot;/><stop offset=&quot;50%&quot; stop-color=&quot;%23FFB3A7&quot;/><stop offset=&quot;100%&quot; stop-color=&quot;%23FF8A71&quot;/></radialGradient></defs><g><path d=&quot;M100,0 Q65,15 50,50 Q35,85 0,100&quot; fill=&quot;none&quot; stroke=&quot;%238cb07c&quot; stroke-width=&quot;3&quot;/><path d=&quot;M82,15 C68,5 58,25 72,30 C86,35 90,15 82,15 Z&quot; fill=&quot;%237ba36a&quot; opacity=&quot;0.85&quot;/><path d=&quot;M45,45 C35,35 25,55 35,60 C45,65 52,45 45,45 Z&quot; fill=&quot;%238cb07c&quot; opacity=&quot;0.85&quot;/><circle cx=&quot;80&quot; cy=&quot;20&quot; r=&quot;16&quot; fill=&quot;url(%23rg2)&quot;/><circle cx=&quot;82&quot; cy=&quot;18&quot; r=&quot;11&quot; fill=&quot;url(%23rg1)&quot;/><circle cx=&quot;52&quot; cy=&quot;45&quot; r=&quot;12&quot; fill=&quot;url(%23rg2)&quot;/><circle cx=&quot;54&quot; cy=&quot;43&quot; r=&quot;8&quot; fill=&quot;url(%23rg1)&quot;/></g></svg>'); background-size: contain; background-repeat: no-repeat;"></div>
+
+			<!-- Fixed Floating Close Button on Top Right (perfect for easy mobile tapping and scrolling) -->
+			<button id="close-memories-btn-floating" style="position: fixed; top: 20px; right: 20px; z-index: 25000; background: #ffffff; border: 1.5px solid #FFBCA7; color: #FF7A59; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 16px rgba(255, 122, 89, 0.2); transition: all 0.2s; outline: none;" title="Close Album">
+				✕
+			</button>
+
+			<div style="max-width: 800px; margin: 0 auto; text-align: center;">
+				<!-- Scrapbook Title Header -->
+				<div style="margin-bottom: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; padding: 0 10px;">
+					<!-- Decorative top watercolor rose garland ornament -->
+					<div style="width: 100%; max-width: 320px; height: 35px; margin-bottom: 12px; background-image: url('data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 200 30&quot;><defs><radialGradient id=&quot;rg1&quot; cx=&quot;50%&quot; cy=&quot;50%&quot; r=&quot;50%&quot;><stop offset=&quot;0%&quot; stop-color=&quot;%23FFB3A7&quot;/><stop offset=&quot;100%&quot; stop-color=&quot;%23FF8A71&quot;/></radialGradient></defs><g stroke=&quot;%238cb07c&quot; stroke-width=&quot;1.5&quot; fill=&quot;none&quot;><path d=&quot;M10,15 Q50,5 100,15 T190,15&quot;/></g><g fill=&quot;url(%23rg1)&quot;><circle cx=&quot;50&quot; cy=&quot;10&quot; r=&quot;5&quot;/><circle cx=&quot;100&quot; cy=&quot;15&quot; r=&quot;6&quot;/><circle cx=&quot;150&quot; cy=&quot;10&quot; r=&quot;5&quot;/></g></svg>'); background-size: contain; background-repeat: no-repeat; background-position: center; pointer-events: none;"></div>
+
+					<h2 style="font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 800; color: #FF8A71; margin-bottom: 8px; text-shadow: 1px 1px 2px rgba(255,138,113,0.15);">Our Sweet Memories Book</h2>
+					<p style="font-family: 'Signika', sans-serif; font-size: 15px; color: #8C716B; margin-bottom: 18px; font-weight: bold;">Flip through some of our most beautiful moments together</p>
+					
+					<!-- Highly-visible, mobile-friendly prominent header Close button -->
+					<button id="close-memories-btn" style="background: #FFE4D9; border: 1.5px solid #FFBCA7; color: #FF7A59; font-family: 'Signika', sans-serif; font-size: 15px; font-weight: bold; padding: 10px 25px; border-radius: 25px; cursor: pointer; transition: all 0.2s; outline: none; box-shadow: 0 4px 15px rgba(255, 122, 89, 0.15); display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+						✕ Close Album
+					</button>
+				</div>
+
+				<!-- Scrapbook Grid -->
+				<div class="row" id="memories-grid" style="margin-bottom: 50px;">
+					<!-- Polaroid moments will be dynamically generated here -->
+				</div>
+
+				<!-- Decorative Footer inside Album -->
+				<div style="margin-top: 40px; margin-bottom: 30px; font-family: 'Signika', sans-serif; font-size: 13px; color: #b08d7e;">
+					Made with lots of love 💖
+				</div>
+			</div>
+		</div>
+
+		<!-- Full-screen Lightbox Modal Overlay for Image Tapping -->
+		<div id="image-lightbox" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(22, 17, 16, 0.95); z-index: 30000; align-items: center; justify-content: center; flex-direction: column; padding: 24px; transition: all 0.25s ease; opacity: 0;">
+			<!-- Close button -->
+			<span id="close-lightbox-btn" style="position: absolute; top: 20px; right: 30px; color: #FFF0EA; font-size: 40px; font-weight: 300; cursor: pointer; transition: all 0.2s; user-select: none; font-family: 'Signika', sans-serif;">&times;</span>
+			
+			<!-- Image frame mimicking pristine professional photography gallery border -->
+			<div style="max-width: 90%; max-height: 75vh; display: flex; align-items: center; justify-content: center; border: 12px solid #ffffff; background: #ffffff; border-radius: 4px; box-shadow: 0 25px 60px rgba(0,0,0,0.45); overflow: hidden; margin-bottom: 20px;" class="lightbox-open-animation">
+				<img id="lightbox-img" src="" alt="Zoomed Memory" style="max-width: 100%; max-height: 65vh; object-fit: contain; display: block;" />
+			</div>
+			
+			<!-- Caption tag below image inside lightbox -->
+			<p id="lightbox-caption" style="font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 600; font-style: italic; color: #FFF9F6; text-align: center; max-width: 650px; padding: 0 15px; margin: 0; line-height: 1.5; text-shadow: 0 2px 4px rgba(0,0,0,0.5);"></p>
+		</div>
+
+		<script>
+			// Extract URL parameters
+			const urlParams = new URLSearchParams(window.location.search);
+			const id = urlParams.get('id');
+
+			function renderWish(name, messageLines) {
+				if (name) {
+					document.title = "A Special Surprise For " + name + " 💖";
+				}
+				let html = '<p>' + name + ',</p>';
+				messageLines.forEach(function(line) {
+					if (line.trim() !== '') {
+						html += '<p>' + line + '</p>';
+					}
+				});
+				html += '<p>Happy Birthday ' + name + '! 🎂🌹</p>';
+				document.querySelector('#dynamic-message-container .col-md-12').innerHTML = html;
+			}
+
+			function showExpiredScreen() {
+				document.getElementById('expired-overlay').style.display = 'flex';
+				// Hide normal page structure
+				const container = document.querySelector('.container');
+				if (container) container.style.display = 'none';
+				const nav = document.querySelector('.navbar-fixed-bottom');
+				if (nav) nav.style.display = 'none';
+				// Stop and hide song
+				const song = document.querySelector('.song');
+				if (song) {
+					song.pause();
+					song.src = "";
+				}
+			}
+
+			window.albumData = null;
+
+			function openLightbox(url, caption) {
+				const lightbox = document.getElementById('image-lightbox');
+				const img = document.getElementById('lightbox-img');
+				const cap = document.getElementById('lightbox-caption');
+				if (!lightbox || !img || !cap) return;
+				
+				img.src = url;
+				cap.textContent = caption || '';
+				lightbox.style.display = 'flex';
+				// Trigger reflow for transition
+				lightbox.offsetHeight;
+				lightbox.style.opacity = '1';
+			}
+
+			function closeLightbox() {
+				const lightbox = document.getElementById('image-lightbox');
+				if (!lightbox) return;
+				lightbox.style.opacity = '0';
+				setTimeout(function() {
+					lightbox.style.display = 'none';
+				}, 250);
+			}
+
+			function populateAlbum(album) {
+				const grid = document.getElementById('memories-grid');
+				if (!grid) return;
+				grid.innerHTML = '';
+				
+				// Exquisite reusable SVG watercolor rose corner gradient definition
+				const roseSvgMarkup = `
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+						<defs>
+							<radialGradient id="rg1" cx="50%" cy="50%" r="50%">
+								<stop offset="0%" stop-color="%23FFB3A7"/>
+								<stop offset="75%" stop-color="%23FF8A71"/>
+								<stop offset="100%" stop-color="%23FF6B4E" stop-opacity="0"/>
+							</radialGradient>
+							<radialGradient id="rg2" cx="40%" cy="40%" r="60%">
+								<stop offset="0%" stop-color="%23FFE4D9"/>
+								<stop offset="50%" stop-color="%23FFB3A7"/>
+								<stop offset="100%" stop-color="%23FF8A71"/>
+							</radialGradient>
+						</defs>
+						<g opacity="0.95">
+							<path d="M100,0 Q65,15 50,50 Q35,85 0,100" fill="none" stroke="%238cb07c" stroke-width="2.5"/>
+							<path d="M82,15 C68,5 58,25 72,30 C86,35 90,15 82,15 Z" fill="%237ba36a" opacity="0.85"/>
+							<path d="M45,45 C35,35 25,55 35,60 C45,65 52,45 45,45 Z" fill="%238cb07c" opacity="0.85"/>
+							<circle cx="80" cy="20" r="15" fill="url(%23rg2)"/>
+							<circle cx="82" cy="18" r="10" fill="url(%23rg1)"/>
+							<circle cx="52" cy="45" r="11" fill="url(%23rg2)"/>
+							<circle cx="54" cy="43" r="7" fill="url(%23rg1)"/>
+						</g>
+					</svg>
+				`.trim().replace(/"/g, '&quot;').replace(/</g, '%3C').replace(/>/g, '%3E');
+
+				album.forEach(function(moment, idx) {
+					const col = document.createElement('div');
+					col.className = 'col-md-6 col-sm-6';
+					
+					// Apply different default rotation offsets for a messy scrapbook look
+					const rot = (idx % 2 === 0) ? (idx * 1.3 - 2) : (idx * 0.9 + 1.5);
+					
+					col.innerHTML = `
+						<div class="polaroid-card animate-polaroid" style="transform: rotate(${rot}deg); margin-bottom: 35px; background: #ffffff; padding: 22px 20px 32px 20px; box-shadow: 0 12px 35px rgba(255, 138, 113, 0.12); border: 1.5px solid #FFD8CC; border-radius: 4px; transition: all 0.3s ease; position: relative; overflow: hidden;">
+							
+							<!-- Charming taped rose decorative sticker at top center -->
+							<div style="position: absolute; top: -2px; left: 50%; transform: translateX(-50%); background: #FFE4D9; border: 1px dashed #FFBCA7; padding: 2px 14px; border-radius: 3px; font-family: 'Signika', sans-serif; font-size: 11px; font-weight: bold; color: #FF7A59; z-index: 10; display: flex; align-items: center; gap: 4px; box-shadow: 0 2px 6px rgba(255,138,113,0.15);">
+								🌹 memory
+							</div>
+
+							<!-- Exquisite Watercolor Rose Corner Borders framing each photo dynamically on all 4 corners -->
+							<div class="polaroid-image-wrapper" style="width: 100%; aspect-ratio: 4 / 3; background: #FFF9F6; overflow: hidden; border: 1.5px solid #FAD2C4; margin-top: 10px; margin-bottom: 15px; position: relative; border-radius: 2px;">
+								<img src="${moment.imageUrl}" alt="Memory ${idx + 1}" style="width:100%; height:100%; object-fit:cover;" />
+								
+								<!-- Top Left Rose Corner -->
+								<div style="position: absolute; top: -2px; left: -2px; width: 44px; height: 44px; pointer-events: none; z-index: 5; transform: rotate(270deg); background-image: url('data:image/svg+xml;utf8,${roseSvgMarkup}'); background-size: contain; background-repeat: no-repeat; background-position: top right;"></div>
+								
+								<!-- Top Right Rose Corner -->
+								<div style="position: absolute; top: -2px; right: -2px; width: 44px; height: 44px; pointer-events: none; z-index: 5; transform: rotate(0deg); background-image: url('data:image/svg+xml;utf8,${roseSvgMarkup}'); background-size: contain; background-repeat: no-repeat; background-position: top right;"></div>
+								
+								<!-- Bottom Left Rose Corner -->
+								<div style="position: absolute; bottom: -2px; left: -2px; width: 44px; height: 44px; pointer-events: none; z-index: 5; transform: rotate(180deg); background-image: url('data:image/svg+xml;utf8,${roseSvgMarkup}'); background-size: contain; background-repeat: no-repeat; background-position: top right;"></div>
+								
+								<!-- Bottom Right Rose Corner -->
+								<div style="position: absolute; bottom: -2px; right: -2px; width: 44px; height: 44px; pointer-events: none; z-index: 5; transform: rotate(90deg); background-image: url('data:image/svg+xml;utf8,${roseSvgMarkup}'); background-size: contain; background-repeat: no-repeat; background-position: top right;"></div>
+							</div>
+
+							<div class="polaroid-caption" style="font-family: 'Playfair Display', serif; font-size: 15px; font-style: italic; font-weight: 700; color: #5C4B47; text-align: center; line-height: 1.5; padding: 0 5px;">
+								${moment.caption || ''}
+							</div>
+						</div>
+					`;
+					
+					// Bind tap/click to open image zoom lightbox
+					const card = col.querySelector('.polaroid-card');
+					if (card) {
+						card.addEventListener('click', function() {
+							openLightbox(moment.imageUrl, moment.caption);
+						});
+					}
+					
+					grid.appendChild(col);
+				});
+			}
+
+			// Listeners for the memory buttons
+			document.addEventListener('DOMContentLoaded', function() {
+				const openBtn = document.getElementById('open-memories-btn');
+				const closeBtn = document.getElementById('close-memories-btn');
+				const closeBtnFloating = document.getElementById('close-memories-btn-floating');
+				const overlay = document.getElementById('memories-album-overlay');
+				
+				const lightbox = document.getElementById('image-lightbox');
+				const closeLightboxBtn = document.getElementById('close-lightbox-btn');
+				
+				function closeAlbumBook() {
+					if (overlay) {
+						overlay.style.display = 'none';
+						document.body.style.overflow = 'auto'; // restore scroll
+					}
+				}
+
+				if (openBtn && overlay) {
+					openBtn.addEventListener('click', function() {
+						overlay.style.display = 'block';
+						document.body.style.overflow = 'hidden'; // prevent scrolling behind the book
+					});
+				}
+				
+				// Wire both regular close button and top floating close button
+				if (closeBtn) {
+					closeBtn.addEventListener('click', closeAlbumBook);
+				}
+				if (closeBtnFloating) {
+					closeBtnFloating.addEventListener('click', closeAlbumBook);
+				}
+				
+				// Close lightbox on background or cross button click
+				if (lightbox) {
+					lightbox.addEventListener('click', function(e) {
+						if (e.target === lightbox || e.target === closeLightboxBtn || e.target.id === 'close-lightbox-btn') {
+							closeLightbox();
+						}
+					});
+				}
+				if (closeLightboxBtn) {
+					closeLightboxBtn.addEventListener('click', closeLightbox);
+				}
+			});
+
+			if (id) {
+				// Secure Dynamic Look-up and state check
+				fetch('/api/wishes/check?id=' + encodeURIComponent(id))
+					.then(response => {
+						if (!response.ok) {
+							throw new Error('Network error checking wish');
+						}
+						return response.json();
+					})
+					.then(data => {
+						if (data.valid) {
+							const lines = data.message.split('\n');
+							renderWish(data.name, lines);
+							if (data.album && data.album.length > 0) {
+								window.albumData = data.album;
+								populateAlbum(data.album);
+								document.getElementById('memories-cta-container').style.display = 'none';
+							} else {
+								window.albumData = null;
+								const cta = document.getElementById('memories-cta-container');
+								if (cta) cta.style.setProperty('display', 'none', 'important');
+							}
+						} else {
+							showExpiredScreen();
+						}
+					})
+					.catch(err => {
+						console.error("API error checking wish", err);
+						showExpiredScreen();
+					});
+			} else {
+				// Fallback to legacy encoded URL values for full backwards compatibility
+				let encodedName = urlParams.get('n');
+				let encodedMessage = urlParams.get('m');
+				let expiry = urlParams.get('e');
+				let timestamp = urlParams.get('t');
+
+				// Check legacy client-side expiry
+				if (expiry && timestamp) {
+					const ts = parseInt(timestamp, 10);
+					let duration = 0;
+					if (expiry === '1h') duration = 60 * 60 * 1000;
+					else if (expiry === '3h') duration = 3 * 60 * 60 * 1000;
+					else if (expiry === '6h') duration = 6 * 60 * 60 * 1000;
+					else if (expiry === '12h') duration = 12 * 60 * 60 * 1000;
+					else if (expiry === '24h') duration = 24 * 60 * 60 * 1000;
+					else if (expiry === '7d') duration = 7 * 24 * 60 * 60 * 1000;
+
+					if (duration > 0 && Date.now() > ts + duration) {
+						showExpiredScreen();
+					}
+				}
+
+				let customName = "Friend";
+				let customMessage = ["Happy Birthday!"];
+
+				try {
+					if (encodedName) customName = decodeURIComponent(atob(encodedName));
+					if (encodedMessage) customMessage = decodeURIComponent(atob(encodedMessage)).split('\n');
+				} catch (e) {
+					console.error("Failed to decode parameters", e);
+				}
+
+				window.albumData = null;
+				const cta = document.getElementById('memories-cta-container');
+				if (cta) cta.style.setProperty('display', 'none', 'important');
+
+				renderWish(customName, customMessage);
+			}
+		</script>
+
+
+		<div class="navbar navbar-fixed-bottom">
+			<div class="row">
+				<div class="col-md-6 text-center col-md-offset-3">
+					<button class="btn btn-primary" id="turn_on">Turn On Lights</button>
+					<button class="btn btn-primary" id="play">Play Music</button>
+					<button class="btn btn-primary" id="bannar_coming">Let's Decorate</button>
+					<button class="btn btn-primary" id="balloons_flying">Fly With Balloons</button>
+					<button class="btn btn-primary" id="cake_fadein">Most Delicious Cake Ever</button>
+					<button class="btn btn-primary" id="light_candle"> Light Candle</button>
+					<button class="btn btn-primary" id="wish_message">Happy Birthday</button>
+					<button class="btn btn-primary" id="story">A mesage for you</button>
+					<!-- <button class="btn btn-primary" id="cake_cut">Lrt's Cut the Cake</button> -->
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="effect.js"></script>
+</html>

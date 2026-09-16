@@ -1,0 +1,6 @@
+{
+  "name": "PeachWish",
+  "description": "Create and share sweet, personalized surprise wish pages in beautiful warm peach and cream tones.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

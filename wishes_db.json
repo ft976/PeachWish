@@ -1,0 +1,18 @@
+{
+  "4c00c5935a6d701d0f0de9696cd343c5": {
+    "id": "4c00c5935a6d701d0f0de9696cd343c5",
+    "name": "V.",
+    "message": "have optimized the layout alignment, refined the cake sizing, and scaled up the message typography to ensure a beautiful, overlap-free sequence:\nPerfect Spacing & Zero Overlap:\nAdjusted the vertical target of the aligned balloons to sit slightly higher (top: 180px on desktop, top: 130px on mobile) to hover neatly under the main banner.\nPositioned the cake container downward and scaled the cake to a balanced 0.85x size. This guarantees a generous, clean visual gap between the aligned balloons and the cake.\nEnhanced Birthday Message Font Size:\nDesktop: Increased the letter message font size from 28px to an elegant 36px with a comfortable 1.6 line-height for a premium, readable feel.\nTablet: Increased font size to 28px.\nMobile: Scaled up font size to 22px so it fills mobile frames beautifully without clutterin",
+    "expiry": "24h",
+    "timestamp": 1789582660796,
+    "deleted": false
+  },
+  "1a266bb18637985e37cb1e0604463de6": {
+    "id": "1a266bb18637985e37cb1e0604463de6",
+    "name": "John",
+    "message": "Hello",
+    "expiry": "never",
+    "timestamp": 1789582717205,
+    "deleted": false
+  }
+}
