@@ -23,7 +23,6 @@ import {
 } from 'lucide-react';
 import { QRCodeSVG } from 'qrcode.react';
 import { cn } from '@/lib/utils';
-import AdBanner from '@/components/AdBanner';
 
 interface WishHistoryItem {
   id: string;
@@ -341,8 +340,6 @@ export default function SenderDashboard() {
         </div>
       </nav>
 
-      <AdBanner />
-
       <main className="py-12 px-4 sm:px-6 max-w-2xl mx-auto space-y-10">
         
         {/* Header - Warm, Loving & Universal for Everyone */}
@@ -446,10 +443,6 @@ export default function SenderDashboard() {
                   <p className="text-xs font-bold text-[#8C716B]">
                     under 2MB each
                   </p>
-                  
-                  {albumMoments.some(m => m.imageUrl) && (
-                    <AdBanner />
-                  )}
                   
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {albumMoments.map((moment, index) => (
@@ -557,8 +550,6 @@ export default function SenderDashboard() {
               <p className="text-sm text-[#6E5D59]">Copy the special link or share the custom Peach Heart QR code.</p>
             </div>
 
-            <AdBanner />
-
             {/* Link Copy Box */}
             <div className="flex flex-col sm:flex-row items-center gap-3 bg-[#FFF5F1] p-2.5 rounded-2xl border border-[#FAD2C4]">
               <div className="flex-1 w-full truncate px-3 py-1 text-sm font-semibold font-mono text-[#E06D53]">
@@ -665,8 +656,6 @@ export default function SenderDashboard() {
         )}
 
       </main>
-
-      <AdBanner />
 
       {/* Signature Footer */}
       <footer className="w-full pb-8 pt-4 flex justify-center animate-in fade-in duration-500">

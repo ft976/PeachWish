@@ -1,4 +1,5 @@
 import type {Metadata} from 'next';
+import Script from 'next/script';
 import './globals.css'; // Global styles
 
 export const metadata: Metadata = {
@@ -23,7 +24,12 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en">
       <head>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1428022985258563" crossOrigin="anonymous"></script>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1428022985258563"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </head>
       <body suppressHydrationWarning className="antialiased">{children}</body>
     </html>
